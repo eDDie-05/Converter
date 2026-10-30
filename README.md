@@ -1,151 +1,71 @@
-# Converter
+# Text-to-Speech Converter
 
-A simple **Converter Application** designed to convert values between different units and formats. The project demonstrates basic programming concepts such as user input, calculations, functions, and conditional statements.
+A small **Python text-to-speech command-line project**. It uses Google Text-to-Speech (gTTS) to generate spoken audio and `playsound` to play it.
+
+> The current Python source converts text into speech. It does not currently implement unit, currency, temperature, or measurement conversion.
 
 ## Features
 
-* Length conversion
-* Weight conversion
-* Temperature conversion
-* Currency conversion
-* Time conversion
-* Area conversion
-* Volume conversion
-* Speed conversion
-* User-friendly menu
-* Input validation
+- Accepts text from a command-line argument
+- Supports a language code through the `--lang` option
+- Generates speech using gTTS
+- Plays the generated audio
+- Uses a temporary audio file in `converter2.py` and removes it after playback
 
-## Conversion Categories
+## Requirements
 
-### Length
+- Python 3
+- An internet connection when requesting speech from gTTS
+- Audio playback support on your operating system
 
-* Meters
-* Kilometers
-* Centimeters
-* Miles
-* Feet
-* Inches
-
-### Weight
-
-* Kilograms
-* Grams
-* Pounds
-* Ounces
-
-### Temperature
-
-* Celsius
-* Fahrenheit
-* Kelvin
-
-### Time
-
-* Seconds
-* Minutes
-* Hours
-* Days
-
-### Speed
-
-* Kilometers per hour
-* Meters per second
-* Miles per hour
-
-## Example
-
-```text
-================================
-        UNIT CONVERTER
-================================
-
-1. Length
-2. Weight
-3. Temperature
-4. Time
-5. Speed
-6. Exit
-
-Enter your choice: 1
-
-Enter value: 10
-From: Meters
-To: Kilometers
-
-Result: 0.01 km
-```
-
-## Technologies
-
-* Programming Language: **[C / Python / JavaScript]**
-* Functions
-* Variables
-* Conditional statements
-* Loops
-* User input
-* Mathematical calculations
-
-## Project Structure
-
-```text
-converter/
-│
-├── main.[extension]
-├── README.md
-└── ...
-```
-
-## How to Run
-
-### C
+Install the Python dependencies:
 
 ```bash
-gcc main.c -o converter
-./converter
+python -m pip install -r requirements.txt
 ```
 
-### Python
+## Run
+
+Clone the repository:
 
 ```bash
-python3 main.py
+git clone https://github.com/eDDie-05/Converter.git
+cd Converter
 ```
 
-### JavaScript
+Convert and play a phrase:
 
 ```bash
-npm install
-npm start
+python converter2.py "Hello, welcome to my text to speech project."
 ```
 
-## Learning Objectives
+Choose another supported gTTS language code:
 
-This project demonstrates:
+```bash
+python converter2.py "Bonjour tout le monde" --lang fr
+```
 
-* Basic programming logic
-* Mathematical operations
-* Functions
-* User input handling
-* Conditional statements
-* Loops
-* Data validation
-* Menu-driven applications
+The default language code is `en`.
 
-## Future Improvements
+## Project files
 
-* Graphical user interface
-* Live currency exchange rates
-* More measurement units
-* Conversion history
-* Favorite conversions
-* Mobile application
-* Dark mode
+| File | Purpose |
+| --- | --- |
+| `converter2.py` | Command-line version with argument parsing and temporary-file cleanup |
+| `converter.py` | Earlier interactive version |
+| `requirements.txt` | Python dependencies |
 
-## eDDie
+## Current limitations
 
-**Converter Project**
+- Speech generation depends on the gTTS service and an internet connection.
+- Available voices and languages depend on the speech service.
+- Audio playback behavior can vary by operating system.
+- The earlier `converter.py` script imports a module named `playSound`; use `converter2.py` as the documented entry point.
 
-Created for educational and programming practice.
+## Contributing
+
+Open an issue to discuss a proposed change, then submit a focused pull request with reproduction steps.
 
 ## License
 
-This project is intended for educational purposes.
+No open-source license is currently specified. All rights remain with the respective content owner unless a license is added.
